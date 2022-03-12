@@ -2,10 +2,10 @@ import random
 import numpy as np
 import math
 
-# Вычисленние приближенного значение pi
+
 from matplotlib import pyplot as plt
 
-
+# Вычисленние приближенного значение pi
 def fun(N, R):
     zPoints = np.random.uniform(0, 2 * R, 2 * N)
     # print(zPoints.mean()) # Среднее значение
@@ -72,7 +72,7 @@ def show(N, R, xPoints, yPoints, pi):
     plt.ylim([0, R * 2])
     plt.xlim([0, R * 2])
 
-    
+
 
     plt.show()
 
