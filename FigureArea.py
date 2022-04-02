@@ -6,7 +6,7 @@ from matplotlib import pyplot as plt
 
 # Функция заданная в полярных координатах
 def polar(x):
-    return np.sqrt(3 * pow(np.cos(x), 2) + 7 * pow(np.sin(x), 2))
+    return np.sqrt(15 * pow(np.cos(x), 2) + 7 * pow(np.sin(x), 2))
 
 
 # Отрисовка графика
@@ -27,7 +27,7 @@ def show(N):
 
     fig.tight_layout()
 
-    a = 3
+    a = 4
     b = 3
 
     xPoints = np.random.uniform(0, 2 * a, N) - a
@@ -43,13 +43,14 @@ def show(N):
         else:
             plt.scatter(xPoints[i], yPoints[i], s=10, color="black")
 
-    S = M/N * (a * b * 4)
+    S = round((M/N * (a * b * 4)),4)
 
     ax.legend(fontsize=12,
               ncol=1,  # Количество столбцов
               edgecolor='blue',  # Цвет крайней линии
               title=f'Всего сгенерировано точек: {N} \n'
-                    f'Приближённая площадь фигуры: {S}',
+                    f'Приближённая площадь фигуры: {S} \n'
+                    f'Точная площадь: 34,56',
               title_fontsize='12',  # Размер шрифта
               loc="lower left"
               )
@@ -71,7 +72,7 @@ def pp(x, y):
     return math.sqrt((x * x) + (y * y))
 
 def main():
-    N = 179  # Количество генерируемых точек
+    N = 1000  # Количество генерируемых точек
     show(N)
 
 

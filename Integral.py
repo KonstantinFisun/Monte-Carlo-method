@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def function(x):
-    return math.sqrt(11 - 2 * pow(math.sin(x), 2))
+    return math.sqrt(11 - 4 * pow(math.sin(x), 2))
 
 # Построение графика и вычисление интеграла
 def plotttingTriangle(N):
@@ -52,7 +52,7 @@ def plotttingTriangle(N):
 
     # Приближённая площадь
     S = round(M / N * a * b, 2)
-    print(f"Интеграл равен: {S}")
+    print(f"Интеграл по 1 формуле: {S}")
 
     # Ещё точнее
     S1 = 0
@@ -60,14 +60,15 @@ def plotttingTriangle(N):
         S1 += function(xPoints[i])
     S1 *= a / N
     S1 = round(S1, 4)
-    print(f"Интеграл равен: {S1}")
+    print(f"Интеграл по 2 формуле: {S1}")
 
     ax.legend(fontsize=12,
               ncol=1,  # Количество столбцов
               facecolor='oldlace',  # Цвет области
               edgecolor='blue',  # Цвет крайней линии
               title=f'Всего генерируемых точек: {N} \n'
-                    f'Приближённо интеграл равен: {S}',
+                    f'Приближённо интеграл равен: {S} \n'
+                    f'Точное значение: 14.8598',
               title_fontsize='12',  # Размер шрифта
               loc="lower left"
               )
@@ -77,7 +78,7 @@ def plotttingTriangle(N):
     plt.show()
 
 def main():
-    N = 200 # Количество случайных точек
+    N = 2000 # Количество случайных точек
     plotttingTriangle(N) # Вызов функции
 
 

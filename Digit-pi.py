@@ -39,7 +39,7 @@ def show(N, R, xPoints, yPoints, pi):
 
     fig, ax = plt.subplots()
 
-    x = np.linspace(0, 2 * np.pi, num = 150)
+    x = np.linspace(0, 2 * np.pi, num = 250)
 
     # Вычисление точек круга заданных параметрических
     xG = np.array([])
@@ -77,11 +77,9 @@ def show(N, R, xPoints, yPoints, pi):
     plt.show()
 
 def main():
-    N = 400 # Количество случайных точек
-    R = 33 # Радиус
+    N = 1000 # Количество случайных точек
+    R = 4 # Радиус
     fun(N, R)
-
-
 
 
 if __name__ == '__main__':

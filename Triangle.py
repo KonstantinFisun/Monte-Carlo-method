@@ -48,22 +48,24 @@ def plotttingTriangle(N, n):
 
     # Приближённая площадь треугольника
     S = round(M / N * a * b, 2)
-    print(f"Площадь фигуры: {S}")
+    print(f"Площадь фигуры по 1 формуле: {S}")
 
-    # Ещё точнее площадь
+    # Точнее площадь
     S1 = 0
     for i in range(N):
         S1 += function(xPoints[i], n)
     S1 *= a / N
     S1 = round(S1, 4)
-    print(f"Площадь фигуры: {S1}")
+    print(f"Площадь фигуры по 2 формуле: {S1}")
 
     ax.legend(fontsize=12,
               ncol=1,  # Количество столбцов
               facecolor='oldlace',  # Цвет области
               edgecolor='blue',  # Цвет крайней линии
               title=f'Всего генерируемых точек: {N} \n'
-                    f'Площадь фигуры: {S}',
+                    f'Площадь фигуры по методу: {S} \n'
+                    f'Точная площадь фигуры: 100',
+
               title_fontsize='12',  # Размер шрифта
               loc="upper right"
               )
@@ -83,8 +85,8 @@ def plotttingTriangle(N, n):
 
 
 def main():
-    N = 100 # Количество случайных точек
-    n = 2 # Середина интервала
+    N = 5000 # Количество случайных точек
+    n = 4 # Номер варианта
     plotttingTriangle(N, n) # Вызов функции
 
 
